@@ -11,3 +11,8 @@
 /test
 /.classpath
 /.project
+/.lein-repl-history
+/target/repl-port
+/target/stale/extract-native.dependencies
+/pom.xml.asc
+/target/provided/stale/extract-native.dependencies

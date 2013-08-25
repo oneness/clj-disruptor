@@ -36,6 +36,4 @@ or an object array.
   
   (get-slot  [event slot-key value]
              (let [e ^"[Ljava.lang.Object;" event]
-               (aset e slot-key value)))
-  )
-
+               (aset e slot-key value))))

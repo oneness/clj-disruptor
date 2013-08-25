@@ -9,26 +9,23 @@ references :
 
 ## Usage
 
-* clojars [clj-disruptor "0.0.1"]
+* clojars [oneness/clj-disruptor "0.0.2"]
 
 ```clojure
-(require '[examples.disruptor.eg1 :as eg1] :reload)
+From within clj-disruptor folder run lein repl then type:
+(require '[disruptor.core_test :test] :reload)
 
-;; 100 events published
-(eg1/go 100)
+;; pubish 1000 events
+(test/go 1000)
 
-;; takes ~ 2s on my machine
-(eg1/go 1000000)
-
-;; takes ~ 15s on my machine
-(eg1/go 10000000)
 ```
-
-See docs
+## TODO
+* more tests
+* more exposure of LMAX dsl package
 
 
 ## License
 
-Copyright (C) 2012 Dave Sann
+Copyright (C) 2012 Dave Sann, Kasim Tuman
 
 Distributed under the Eclipse Public License, the same as Clojure.

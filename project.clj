@@ -1,9 +1,6 @@
-(defproject clj-disruptor "0.0.1"
-  :description "Clojure access to LMax Disruptor (ring-buffer event processor) https://github.com/davesann/clj-disruptor"
-  :dependencies [[org.clojure/clojure "1.3.0"]
-                 [com.googlecode.disruptor/disruptor "2.7.1"]
-                 ]
-  :dev-dependencies [[lein-eclipse "1.0.0"]
-                     [marginalia "0.7.0-SNAPSHOT"]]
-  ;:java-source-path "src-java"
-  )
+(defproject oneness/clj-disruptor "0.0.2"
+  :license "Eclipse public license, the same as Clojure"
+  :url "https://github.com/oneness/clj-disruptor"
+  :description "Clojure wrapper for LMAX Disruptor-High Performance Inter-Thread Messaging Library"
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [com.lmax/disruptor "3.2.0"]])

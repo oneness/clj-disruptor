@@ -3,11 +3,9 @@
   (:import [com.lmax.disruptor.dsl Disruptor]
            [com.lmax.disruptor 
             EventFactory 
-            EventHandler]
-           )
+            EventHandler])
   (:require [disruptor.event :as de]
-            [clojure.string :as s])
-  )
+            [clojure.string :as s]))
 
 
 ;; # internals
@@ -32,8 +30,7 @@
   "Support conversions to event handler"
   (as-event-handler 
     [this] 
-    [this slot-key]
-    ))
+    [this slot-key]))
 
 (extend-protocol AsEventHandler
   ;; nop - ensures that mixure of fns and event handlers is ok.
@@ -45,9 +42,7 @@
   clojure.lang.IFn
   (as-event-handler 
     ([f]          (make-event-handler f))
-    ([f slot-key] (make-event-handler f slot-key)))
-  )
-
+    ([f slot-key] (make-event-handler f slot-key))))
 
 (defn to-handler-array 
   "Convert a fn, seq of (fns or event-handlers) or map
@@ -68,9 +63,7 @@
       (into-array EventHandler 
                   (map (fn [[slot-key handler]] 
                          (as-event-handler handler slot-key)) 
-                       (seq fns)))
-    ))
-
+                       (seq fns)))))
 
 ;; # sequencing event handlers
 ;; These functions are used to place handlers is sequence or parallel
@@ -127,7 +120,6 @@
    for the Event in the RingBuffer"
   (fn [] (object-array size)))
 
-
 ;; # print events
 (defprotocol EventToStr
   "protocol to mainly support printing java array - debugging essentially"
@@ -138,5 +130,4 @@
   (pstr [event] (str event))
   
    #=(java.lang.Class/forName "[Ljava.lang.Object;")
-  (pstr [event] (str  (vec event))) 
-  )
+  (pstr [event] (str  (vec event))))
